@@ -1,1 +1,6 @@
-<p>upload works!</p>
+<section class="h-full w-full">
+    <div class="pdf-upload h-full w-full justify-center">
+        <input class = 'h-full w-full' type="file" accept=".pdf" name="pdf_file" (change)="onFileSelected($event)">
+        <p class="font-bold">{{message}}</p>
+    </div>
+</section>

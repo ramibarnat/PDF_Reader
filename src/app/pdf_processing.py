@@ -7,7 +7,7 @@ import cv2
 pytesseract.pytesseract.tesseract_cmd = "C:\\Program Files\\Tesseract-OCR\\tesseract.exe"
 def pdf_to_img(src, output):
     # Store all the pages of the PDF in a variable 
-    images = pdf2image.convert_from_path(src,500, poppler_path=r'..\assets\poppler-24.02.0\Library\bin')
+    images = pdf2image.convert_from_path(src,500, poppler_path='C:\\Users\\rws20\\OneDrive\\Desktop\\Code\\Angular\\UploadPractice\\django_server\\django_server\\libraries\\poppler-24.02.0\\Library\\bin')
     for i, image in enumerate(images):
         file = 'image'+str(i)+'.png'
         image.save(output+file, "PNG")
@@ -39,7 +39,7 @@ def text_to_csv(text, file_name):
     else:
         print('Please enter a file name')
 
-# pdf_to_img('../assets/sample.pdf', '../assets/temp_storage/')
+pdf_to_img('../assets/sample.pdf', '../assets/temp_storage/')
 img = cv2.imread('../assets/temp_storage/image0.png')
 img = convert_grayscale(img)
 img = thresholding(img)
